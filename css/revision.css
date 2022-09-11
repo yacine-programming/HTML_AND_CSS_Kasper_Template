@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #edf0f1;
+}
+header {
+    padding: 20px;
+    background-color: #24252A;
+}
+.container {
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header .logo {
+    width: 70px;
+    cursor: pointer;
+}
+header .container .links {
+    
+}
+header .container .links ul {
+list-style: none;
+display: flex;
+
+}
+header .container .links ul li {
+    padding: 0 20px;
+}
+
+header .container .links ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+}
+
+header .container .links ul li a:hover {
+    color: #0088a9;
+}
+
+header a, button {
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+}
+header button {
+    padding: 9px 25px;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 136, 169, 1);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    -webkit-transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s;
+    -o-transition: all 0.3s ease 0s;
+}
+
+header button:hover {
+    background-color: rgba(0, 135, 169, 0.7);
+    
+}
+
+header .container .links ul i {
+    display: none;
+    color: #edf0f1;
+    font-size: 27px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* mobile */
+@media(max-width:767px) {
+    header .container .links ul i {display: block;}
+    header button {padding: 10px 10px;}
+    header .container .links ul li {
+        display: none;
+    }
+}
+
+
+
+/*Small.*/
+@media(min-width:768px) and (max-width:991px) {
+    .container {width: 750px;}
+    header .container .links ul li {padding: 0 10px;}
+    header button {padding: 9px 15px;}
+}
+
+
+
+
+/*Medium*/
+@media(min-width:992px) and (max-width:1199px) {
+    .container {width: 970px; }
+}
+
+/*Large*/
+@media(min-width:1200px) {
+    .container {width: 1170px; }
+}

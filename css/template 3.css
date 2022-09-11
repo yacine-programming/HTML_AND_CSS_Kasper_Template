@@ -1,0 +1,269 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Cairo", sans-serif;
+  background-color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+:root {
+  --main-color: #2196f3;
+  --second-color: #1787e0;
+  --height: 72px;
+  --transition: 0.3s;
+}
+
+/* end global rules */
+.container {
+  padding: 0 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ------------------------------------------------------------------------------------ */
+/*Small.*/
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+/*Medium*/
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+/*Large*/
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+header {
+  background-color: white;
+
+  box-shadow: 0 0 10px #ddd;
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+}
+@media (max-width: 767px) {
+  header .container {
+    flex-direction: column;
+  }
+}
+
+header .container .logo {
+  color: var(--main-color);
+  font-weight: bold;
+  font-size: 26px;
+  height: var(--height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 767px) {
+  header .container .logo {
+    height: 50px;
+  }
+}
+header .container a .one {
+  color: #22e9c4;
+}
+header .container a .two {
+  color: pink;
+}
+header .container > .main-nav {
+  display: flex;
+}
+
+header .container > .main-nav > li > a {
+  color: black;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--height);
+  padding: 0 30px;
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  header .container > .main-nav > li > a {
+    height: 50px;
+    padding: 0 10px;
+    font-size: 15px;
+  }
+}
+header .container > .main-nav > li > a:hover {
+  background-color: #fafafa;
+  color: var(--main-color);
+}
+header .container > .main-nav > li > a::before {
+  content: "";
+  background-color: var(--main-color);
+  width: 0px;
+  height: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+header .container > .main-nav > li > a:hover::before {
+  width: 100%;
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- */
+.landing {
+  position: relative;
+}
+.landing::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #ececec;
+  z-index: -1;
+  transform-origin: top left;
+  transform: skewY(-6deg);
+  top: -25px;
+  left: 0px;
+}
+.landing .container {
+  display: flex;
+  min-height: calc(100vh - 72px);
+  align-items: center;
+  padding-bottom: 120px;
+}
+@media (max-width: 767px) {
+  .landing .container {
+    min-height: calc(100vh - 100px);
+  }
+}
+.landing .container .text {
+  flex: 1;
+}
+@media (max-width: 991px) {
+  .landing .text {
+    text-align: center;
+  }
+}
+.landing .container .text h1 {
+  font-size: 40px;
+  margin: 0;
+  letter-spacing: -2px;
+}
+@media (max-width: 767px) {
+  .landing .container .text h1 {
+    font-size: 30px;
+  }
+}
+.landing .container .text p {
+  font-size: 23px;
+  line-height: 1.7;
+  margin: 5px 0 0;
+  color: #666;
+  max-width: 500px;
+}
+@media (max-width: 991px) {
+  .landing .container .text p {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 991px) {
+  .landing .container .text p {
+    font-size: 18px;
+  }
+}
+.landing .container .image {
+}
+@media (max-width: 991px) {
+  .landing .container .image {
+    display: none;
+  }
+}
+.landing .container .image img {
+  width: 600px;
+  animation: up-down 3s linear infinite;
+  -webkit-animation: up-down 3s linear infinite;
+  position: relative;
+}
+.landing .go-down {
+  color: var(--main-color);
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: var(--transition);
+  -webkit-transition: var(--transition);
+  -moz-transition: var(--transition);
+  -ms-transition: var(--transition);
+  -o-transition: var(--transition);
+}
+.landing .go-down:hover {
+  color: var(--second-color);
+}
+.landing .go-down i {
+  animation: bouncing 1.5s infinite;
+  -webkit-animation: bouncing 1.5s infinite;
+}
+/* ------------------------------------------------------- */
+@keyframes up-down {
+  0%,
+  100% {
+    top: 0;
+  }
+  50% {
+    top: -30px;
+  }
+}
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+  }
+}
+/* ----------------------------------------- */
